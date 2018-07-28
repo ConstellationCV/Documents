@@ -1,0 +1,47 @@
+%%% Research Diary - Entry
+%%% 
+\documentclass[11pt,letterpaper]{article}
+
+\newcommand{\workingDate}{\textsc{2018 $|$ September $|$ 01}}
+\newcommand{\userName}{Pratham Gandhi, Samuel Schuur}
+\newcommand{\institution}{}
+\usepackage{researchdiary_png}
+% To add your univeristy logo to the upper right, simply
+% upload a file named "logo.png" using the files menu above.
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Constellation Project Research Diary}
+
+{\Huge July 18}\\[5mm]
+
+\textit{Summary: Our materials have not arrived yet. We looked into other systems or algorithms which are currently being used to achieve similar outcomes as Constellation is proposed to have.}
+
+\section{Comparable Systems}
+
+\subsection{Structure-From-Motion Pipeline}
+\subsubsection{Epipolar Geometry and Essential Matrices}
+\begin{itemize}
+\item We have two views of a scene, taken from different viewpoints
+\item We see an image point p in one image, which is the projection of a 3D point
+\item Given $p_0$ in the first image, where can the corresponding point $p_1$ in the second image be?
+\item the vector from Camera0 to p0 ($\vec{C_0p_0}$) is coplanar with $\vec{C_0C_1}$ and $\vec{C_1p_1}$, which can be expressed mathematically if you take the cross product of two of them, in this case $\vec{C_0C_1}$ and $\vec{C_1p_1}$, which should be perpendicular to the third vector, the dot product of the third vector with that should equal 0 ($\vec{C_0p_0}\cdot(\vec{C_0C_1}\times\vec{C_1p_1})=0$), because p0 lies in that same plane
+\item We are going to think of p0 not as a point, but now as a 3D direction vector ($\begin{pmatrix}x_0 \\ y_0\\ 1\end{pmatrix}$) - x0 and y0 are projected points on the image plane, and it's a normalized image with focal length=1
+\item If I want to express p1 in camera0 coordinates I need to rotate it by the rotation matrix between C1 and C0
+\begin{itemize}
+\item $^{C_0}_{C_1}Rp_1$
+\end{itemize}
+\item use that equation for lots of known points to determine the 3d direction vectors of each of the points, as shown in \href{https://www.youtube.com/watch?v=kfN76APa4HE}{this} lecture
+\end{itemize}
+\subsubsection{Observations}
+\begin{itemize}
+\item Results can be unstable, due to poor numerical conditioning
+\begin{itemize}
+\item A little bit of image noise can cause a large error in the resulting essential matrix
+\end{itemize}
+\item We can improve the results by:
+\end{itemize}
+\subsection{Stereo Vision}
+
+\end{document}
