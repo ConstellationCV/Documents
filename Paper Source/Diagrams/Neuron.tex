@@ -1,4 +1,5 @@
 \begin{figure}[h]
+\centering
 \begin{tikzpicture}[
 init/.style={
   draw,
@@ -21,7 +22,7 @@ start chain=2,node distance=13mm
   {$w_2$};
 \node[on chain=2,init] (sigma) 
   {$\displaystyle\Sigma$};
-\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Activate \\ function}}]   
+\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Activation \\ function}}]   
   {$f$};
 \node[on chain=2,label=above:Output,join=by -latex] 
   {$y$};
@@ -46,4 +47,4 @@ start chain=2,node distance=13mm
 \draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {Inputs} (x3.south west);
 \end{tikzpicture}
 \caption{Artificial Neuron Diagram}
-\end{figure}\\
+\end{figure}
