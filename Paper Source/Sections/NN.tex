@@ -13,10 +13,10 @@ Mentioned above, weights are positive or negative numbers which scale the effect
 \subsubsection{Feed-forward Neural Network}
 Constellation utilizes a feed-forward neural network, a collection of neurons organized into layers, as classifying mechanism for detection various features in a image. In a feed-forward neural network, the output of each neuron is the input of each neuron in the next layer. In this manner, the original inputs of the network are "fed forward" to new neurons in new layers, passing through a number of hidden layers in the middle, and finishing at the output layer.The outputs of the neurons in the final layer (output layer) are the outputs of the whole network and are used to judge the conclusion the network made.
 \subsubsection{Backpropagation}
-\input{Diagrams/BPNN.tex} 
-\input{Diagrams/BPBranch.tex}
-Supervised learning is the process of adjusting the weights of each neuron in a neural network in an effort to reach target outputs from a specific set of inputs, effectively "fine tuning" the neural network to make it as correct as possible. One of the most common methods of adjusting a neural network's weights is called backpropagation, first developed in Werbos in 1974.
+%\input{Diagrams/BPNN.tex} 
 
+Supervised learning is the process of adjusting the weights of each neuron in a neural network in an effort to reach target outputs from a specific set of inputs, effectively "fine tuning" the neural network to make it as correct as possible. One of the most common methods of adjusting a neural network's weights is called backpropagation, first developed in Werbos in 1974.
+\input{Diagrams/BPBranch.tex}
 In order to train neural networks through backpropagation (BP), we use examples. Each set of example inputs, known as training sets, are connected to a target output, which the system is aware of, and together the two parts form a training pair. The first step of training a BP network is to pass the training set through the neural network with randomly generated weights. The error, represented as $\delta$, for an output neuron is the difference between the actual output and the target output for that training set. Consider the abbreviated neural network illustrated in Figure 4. Assume this network has only an input layer consisting of an unspecified number of input neurons with unspecified outputs, a hidden layer containing only Neuron $A$, and an output layer consisting of Neurons $B$ and $C$. Obviously, $W_{AB}$ and $W_{AC}$ are the weights of the edges connecting the neurons. We complete the backpropagation action by modifying weight $W_{AB}$, replacing it with $W^+_{AB}$, as follows:
 $$\delta_B=Target_B-Output_B$$
 $$W^+_{AB}=W_{AB}+(\delta_B\times Output_A)$$
@@ -25,3 +25,4 @@ This approach is what is also used to adjust the weight of Neuron $C$ from the e
 $$\delta_A = (W_{AB}\times\delta_B)+(W_{AC}\times\delta_C)$$
 
 Once we have established the error for Neuron $A$, its updated weights can be calculated with the same approach used for $B$ and $C$. This pattern is used throughout the full neural network to calculate the adjusted weights for hidden layers in order to converge upon the network's target output.
+\input{Diagrams/BPNN.tex} 
