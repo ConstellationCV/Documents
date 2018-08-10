@@ -1,0 +1,5 @@
+\subsection{Structure-From-Motion Pipelines}
+\input{Diagrams/SFM.tex}
+Structure-from-motion (SFM) pipelines operate on a simple premise; finding common anchor points among several images of the same subject, and using triangulation to estimate where those points lie in relation to the camera.
+\subsubsection{Shortcomings}
+One of the major issues in using SFM pipelines in practical applications where rapidly updating three dimensional estimations are required is that the models produced by SFM pipelines are lacking a scale factor, that is, there is no sense accurate of scale or distance in the model. This is one of the issues Constellation aims to address.
