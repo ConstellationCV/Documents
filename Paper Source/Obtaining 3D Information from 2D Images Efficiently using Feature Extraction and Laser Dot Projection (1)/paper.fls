@@ -337,6 +337,8 @@ INPUT Sections/Hardware.tex
 INPUT Sections/Hardware.tex
 INPUT Sections/Software.tex
 INPUT Sections/Software.tex
+INPUT Diagrams/confidence_time_matches.tex
+INPUT Diagrams/confidence_time_matches.tex
 INPUT Sections/Results.tex
 INPUT Sections/Results.tex
 INPUT Sections/ConstellationAlgoComplexity.tex
