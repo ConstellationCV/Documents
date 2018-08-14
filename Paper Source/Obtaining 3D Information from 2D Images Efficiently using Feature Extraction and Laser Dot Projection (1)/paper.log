@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 AUG 2018 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 AUG 2018 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,13 +854,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 )) (./Sections/Results.tex (./Sections/ConstellationAlgoComplexity.tex [7]
 [8])) (./Sections/Conclusion.tex) [9] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 25601 strings out of 492649
- 644603 string characters out of 6129622
- 818751 words of memory out of 5000000
- 28983 multiletter control sequences out of 15000+600000
+ 25600 strings out of 492649
+ 644584 string characters out of 6129622
+ 818752 words of memory out of 5000000
+ 28982 multiletter control sequences out of 15000+600000
  18230 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,20n,96p,1443b,2235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,20n,96p,1442b,2235s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/tex
@@ -878,7 +878,7 @@ ype1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti12.pfb>
-Output written on paper.pdf (9 pages, 213769 bytes).
+Output written on paper.pdf (9 pages, 214136 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

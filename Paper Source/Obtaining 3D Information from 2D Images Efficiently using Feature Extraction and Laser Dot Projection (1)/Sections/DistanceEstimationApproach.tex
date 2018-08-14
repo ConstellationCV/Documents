@@ -1,2 +1,5 @@
-\subsubsection{Finding an Average Distance Between Dots Within a Shape}
-\subsubsection{Functional Modeling of Distance vs. Applied Machine Learning}
+\subsubsection{Using Refracted Laser Dots to Find the Distance of Objects from the Camera}
+Constellation is quite unique from other systems in its approach of judging the distance of various objects within its captured scene from the camera. Most other approaches might use computationally intensive math and thus have very slow running times. Constellation, instead, uses efficient neural network driven image classification, in combination with simple statistical analysis to perform the same task. The underlying principle which allows this approach to function is that, when refracted through a particularly shaped crystal, the light from a single laser is scattered in such a manner that, as it moves further in distance from its source, it strays further in one direction or the other from its origin, and thus, when it is intercepted by another object at a certain point, 
+\subsubsection{Finding an Accurate Distance Between Dots Within a Shape}
+Constellation's object detection and classification subsystem provides the image coordinates of the center of the object it detects. This is the foundation point used for judging the distance within the image between the laser dots refracted across the figure.
+\subsubsection{Functional Modeling of Distance vs. Applied Data Science}

@@ -17,6 +17,7 @@ $$\frac{\text{\# calculations}}{\text{neuron}}=n+5$$
 $$\text{\# times object detection called}=(w-\sqrt{n})(h-\sqrt{n})$$
 $$\text{(for image width }w\text{, and image height }h;$$
 $$\text{in our implementation }w=1080\text{, }h=720)$$
-Thus, it can be determined that the complexity of determining the classification of a set of $n$ inputs is $O(5\sqrt{n}n+25\sqrt{n})$, and further, the complexity of classifying all objects in an image is $O(5\sqrt{n}n+25\sqrt{n})$. 
+Thus, it can be determined that the number of calculations required to determine the classification of a set of $n$ inputs is $5\sqrt{n}n+25\sqrt{n}$, and further, the complexity of classifying all objects in an image is $O(n^2)$. 
+% $O(5\sqrt{n}n+25\sqrt{n}
 
-To perform similar tasks, a fairly naive implementation of a Structure-From-Motion pipeline would require $15n^3$ calculations, and a stereo vision system implementation would require $find\enspace this$ calculations, both far more than Constellation's mere $find\enspace this$ needed calculations.
+To perform similar tasks, a fairly naive implementation of a Structure-From-Motion pipeline would require $15n^2+c$ calculations, and a stereo vision system implementation would require $find\enspace this$ calculations, both far more than Constellation's mere $find\enspace this$ needed calculations for fairly standard object image size of $n=100$ pixels.
