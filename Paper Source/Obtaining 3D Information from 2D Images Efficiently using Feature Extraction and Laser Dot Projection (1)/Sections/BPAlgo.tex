@@ -1,0 +1,17 @@
+\def\BState{\State\hskip-\ALG@thistlm}
+\begin{algorithm}
+\caption{Backpropagation Algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{backpropagate(network, input vector, targets):}{}
+\State $\text{hidden outputs, outputs}\gets\text{feed\_forward(network, input vector)}$
+\State $\emph{loop}\text{ for each output:}$
+\State $\enspace\enspace\text{delta output}\gets\dot \sigma(\text{output})*(\text{output}-\text{target})$
+\State $\emph{loop}\text{ for each output:}$
+\State $\enspace\enspace\text{adjust weights of the }i\text{th neuron}$
+\State $\emph{loop}\text{ for each hidden output:  // hOutput = hidden output}$
+\State $\enspace\enspace\text{hidden delta}\gets\dot \sigma(\text{hOutput})*(\text{hOutput}-\text{next adjusted input})$
+\State $\emph{loop}\text{ for each hidden output:}$
+\State $\enspace\enspace\text{adjust weights of the }i\text{th hidden neuron}$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}

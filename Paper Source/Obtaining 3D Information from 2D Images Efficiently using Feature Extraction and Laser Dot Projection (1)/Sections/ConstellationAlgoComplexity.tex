@@ -1,16 +1,4 @@
-Constellation's increased speed is due in part to its superior algorithmic efficiency. First consider its core object detection system, a neural network. The network is pre-trained, so in the analysis of its efficiency, the training steps, including the backpropagation algorithm used to fine tune its weights, will be ignored, as at run-time, they will not play any role in the time and number of calculations it takes to determine the nature of an object. Thus, the complexity of identifying an object is only the complexity of feeding the data from the image through the neural network and producing an output. Below is an abridged psuedocode version of the the feed-forward neural network algorithm:
-\begin{program}
-create\enspace an\enspace empty\enspace list\enspace of\enspace all\enspace layers'\enspace output
-for\enspace each\enspace layer\enspace in\enspace the\enspace network:
-\enspace\enspace	create\enspace an\enspace empty\enspace list\enspace of\enspace this\enspace layer's\enspace outputs
-\enspace\enspace	calculate\enspace the\enspace biased\enspace input
-\enspace\enspace	for\enspace each\enspace neuron\enspace in\enspace the\enspace layer:
-\enspace\enspace\enspace\enspace		calculate\enspace output\enspace given\enspace biased\enspace input
-\enspace\enspace\enspace\enspace		add\enspace ouput\enspace to\enspace list\enspace of\enspace this\enspace layer's\enspace outputs
-\enspace\enspace	add\enspace this\enspace layer's\enspace output\enspace to\enspace list\enspace of\enspace all\enspace outputs
-return\enspace all\enspace layers'\enspace outputs
-\end{program}
-The derivations and declarations of variables used to figure the complexity of the feed-forward algorithm are:
+Constellation's increased speed is due in part to its superior algorithmic efficiency. First consider its core object detection system, a neural network. The network is pre-trained, so in the analysis of its efficiency, the training steps, including the backpropagation algorithm used to fine tune its weights, will be ignored, as at run-time, they will not play any role in the time and number of calculations it takes to determine the nature of an object. Thus, the complexity of identifying an object is only the complexity of feeding the data from the image through the neural network and producing an output. The derivations and declarations of variables used to figure the complexity of the feed-forward algorithm are:
 $$\text{\# layers}=\text{constant }c \enspace (\text{in our implementation }c=5)$$
 $$\frac{\text{\# neurons}}{\text{layer}}=\sqrt{n}\text{ for $n$ elements in an input feature vector}$$
 $$\frac{\text{\# calculations}}{\text{neuron}}=n+5$$
@@ -20,4 +8,4 @@ $$\text{in our implementation }w=1080\text{, }h=720)$$
 Thus, it can be determined that the number of calculations required to determine the classification of a set of $n$ inputs is $5\sqrt{n}n+25\sqrt{n}$, and further, the complexity of classifying all objects in an image is $O(n^2)$. 
 % $O(5\sqrt{n}n+25\sqrt{n}
 
-To perform similar tasks, a fairly naive implementation of a Structure-From-Motion pipeline would require $15n^2+c$ calculations, and a stereo vision system implementation would require $find\enspace this$ calculations, both far more than Constellation's mere $find\enspace this$ needed calculations for fairly standard object image size of $n=100$ pixels.
+To perform similar tasks, a fairly naive implementation of a Structure-From-Motion pipeline would require $15n^3+c$ calculations, and a stereo vision system implementation would require $find\enspace this$ calculations, both far more than Constellation's mere $find\enspace this$ needed calculations for fairly standard object image size of $n=100$ pixels.

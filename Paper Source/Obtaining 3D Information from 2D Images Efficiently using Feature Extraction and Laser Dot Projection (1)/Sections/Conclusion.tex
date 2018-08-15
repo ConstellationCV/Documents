@@ -1,4 +1,9 @@
 \subsection{Advantages Over Similar Systems}
 \subsection{Shortcomings and Future Improvements for Constellation}
 - need to pre-train the network on objects before Constellation can put it in the environment accurately
+
 - non-visual dot projection (infared or something else)
+
+- increase time efficiency by concurrently carrying out object detection and dot detection operations (weight the pros and cons of distributed computations at that scale and their intensiveness on cpu, also weave in gpu acceleration)
+
+- range, increase by stronger lasers and more training data for KNN model

@@ -1,24 +1,3 @@
-%% This is file `elsarticle-template-1-num.tex',
-%%
-%% Copyright 2009 Elsevier Ltd
-%%
-%% This file is part of the 'Elsarticle Bundle'.
-%% ---------------------------------------------
-%%
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%%
-%% Template article for Elsevier's document class `elsarticle'
-%% with numbered style bibliographic references
-%%
-%% $Id: elsarticle-template-1-num.tex 149 2009-10-08 05:01:15Z rishi $
-%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1-num.tex $
-%%
-
 \documentclass[preprint,12pt]{elsarticle}
 \makeatletter
 \def\ps@pprintTitle{%
@@ -27,10 +6,13 @@
    \def\@oddfoot{August\enspace2018}%
    \def\@evenfoot{August\enspace2018}%
 }
+
 \makeatother
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts, tikz, caption, subcaption, python, program}
 \usepackage{pgfplots}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usetikzlibrary{matrix,chains,positioning,decorations,arrows}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,calc}
 
