@@ -346,6 +346,8 @@ INPUT Sections/BPAlgo.tex
 INPUT Sections/BPAlgo.tex
 INPUT Sections/Approach.tex
 INPUT Sections/Approach.tex
+INPUT Sections/ObjectModel.tex
+INPUT Sections/ObjectModel.tex
 INPUT Sections/ObjectDetectionApproach.tex
 INPUT Sections/ObjectDetectionApproach.tex
 INPUT Sections/DistanceEstimationApproach.tex
@@ -373,6 +375,8 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm5.tfm
 INPUT Sections/Conclusion.tex
 INPUT Sections/Conclusion.tex
+INPUT paper.bbl
+INPUT paper.bbl
 INPUT paper.aux
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb

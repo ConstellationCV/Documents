@@ -163,13 +163,32 @@ line/.style={draw}
 \label{S:6}
 \input{Sections/Conclusion.tex}
 
+
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
-%% \appendix
+\appendix
 
-%% \section{}
-%% \label{}
+\nocite{*}
 
+\section{Refrences}
+\label{A:1}
+\bibliographystyle{model1-num-names}
+\bibliography{sample.bib}
+
+\section{Open Source Code and Library}
+\label{A:2}
+The ConstellationCV project was created and built as a research project to explore new approaches to an old problem. As such, most of the code
+and documents produced in the research project have been open-sourced and are accessible by anyone. All of the production code has been formatted into an open library structure to allow for easy use of it, as well as to encourage the modification and adaptation of the principles for specific uses. The authors of this paper welcome any contributions to or thoughts about the project, and would additionally encourage those interested to fork the repository on GitHub and attempt improve it in any way possible. All of the code can be found at:\\
+
+\begin{centering}
+\texttt{https://github.com/ConstellationCV/Constellation}\\~\\
+\end{centering}
+
+Additionally, for those interested, all documents produced in the process of developing Constellation, including research logs and all the source files for this paper, have been open sourced and can be found at:\\
+
+\begin{centering}
+\texttt{https://github.com/ConstellationCV/Documents}\\
+\end{centering}
 %% References
 %%
 %% Following citation commands can be used in the body text:
@@ -179,9 +198,6 @@ line/.style={draw}
 %%   \citet{key}         ==>>  Author [#]
 
 %% References with bibTeX database:
-
-%%\bibliographystyle{model1-num-names}
-%%\bibliography{sample.bib}
 
 %% Authors are advised to submit their bibtex database files. They are
 %% requested to list a bibtex style file in the manuscript if they do
