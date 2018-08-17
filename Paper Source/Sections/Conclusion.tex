@@ -1,0 +1,13 @@
+\subsection{Advantages Over Similar Systems}
+\subsection{Shortcomings and Future Improvements for Constellation}
+- need to pre-train the network on objects before Constellation can put it in the environment accurately
+
+- re^^: extract key anchor points such as pre-trained corner or vertices, and interpolate a reasonably applicable mesh over those vertices to form objects so that you don't have to train full and exact objects
+
+- non-visual dot projection (infared or something else)
+
+- increase time efficiency by concurrently carrying out object detection and dot detection operations (weight the pros and cons of distributed computations at that scale and their intensiveness on cpu, also weave in gpu acceleration)
+
+- range, increase by stronger lasers and more training data for KNN model
+
+- other languages fully rewrite the system or provide accessors in other language which run the python and can interface between the python implementation and other languges

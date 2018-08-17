@@ -1,0 +1,38 @@
+\subsection{Software}
+\subsubsection{Object Oriented vs. Procedural Neural Network Design}
+Two design paradigms were considered for Constellation's object detection and classification driving neural network; object oriented (OO) and procedural. Object oriented design is a programming design structure in which the program consists of many objects of different classes, each with their own defined behavior and data to solve a specific sub-problem. Procedural programming, on the other hand, is centered around the concept of the procedure call. Procedures, in this case, are functions or methods that carry out certain tasks or return certain values. Procedural design would dictate simply a series of steps to be carried out in a certain order, all in one place. Initially, an OO approach was taken. However, integrating so many moving parts seemed unecessary and waster precious compute time. Thus, it was decided that Constellation's neural network design be shifted to a procedural one.
+\subsubsection{Feature Extraction}
+In constellation's implementation, there are three main parts of extracting features from a two dimensional image; the first is training our system to recognize the object, the second is iterating over the image, and the third is the neural network classification. Firstly, the neural network is trained by feeding forward labeled images through it, and it backpropagating and adjusting its values based on the label. Then, the second and third steps are carried out conjuctly as Constellation iterates over the image in question, taking slices of it which match the size of the trained objects, and determine whether or not some object is present in that slice, by using the confidence value from the neural network and checking if that exceeds a set threshold.
+\subsubsection{Distance Estimation}
+The process of estimating an object's distance from the camera begins with creating a list of all the laser dots found in the image. That list is then sorted by distance from the center of the object in question, and cleaned by removing near-duplicate values, which were often produced by the system due to very similar training templates. Distances used to sort the points and to eliminate near-duplicates were determined by using the Manhattan distance formula in this case instead of Euclidean distance due to the grid-like nature of set of refracted points. If the distance between two points was less than 30 pixels, the second of the two points is removed from the list.
+$$\text{Manhattan }d_{\text{between vectors A \& B}}=\sum \limits_{i=1}^n \mid A_i-B_i\mid$$
+$$\text{Euclidean }d_{\text{between vectors A \& B}}=\sum \limits_{i=1}^n (\sqrt{A_i-B_i})^2$$
+
+Constellation's capability to estimate the distance of an object was majorly grounded in its employment of a k-nearest neighbor model. With the cleaned and sorted list of all the laser points in the image, Constellation can simple extract the first point in the list, or the one at the \texttt{0}th index to find the point closest to the object, and the \texttt{i}th $\forall \texttt{ i}<j\text{ points within the object}$, and calculate the average distance between each point. The classifier was implemented in its own class, and an object of that class was created when it was needed. Constellation simply passes in the average distance between points within the image and finds the classification for the distance.
+\subsubsection{User-Facing Application}
+Constellation contains a very simple user-facing interface to accompany the software library, which allows users to employ Constellation to create their own three dimensional models. As shown below, the interface allows the user to enter the path to the directory where the user has stored videos of the objects they want to train into the system, the directory where the image to be converted into a 3D scene is stored, and a directory where Constellation will output the \texttt{.stl} file representing the model of the scene.
+\subsubsection{Library Structure}
+In addition to providing a graphical user interface to easily use Constellation, Constellation's source code has been open sourced and formatted in such a way which allows it to be employed in a libray-like fashion by developers who would like to integrate it into their app. Below is a diagram of the structure of the library. For more information about the library and how to use it, see Appendix A.\\
+
+\dirtree{%
+.1 Constellation.
+.2 data.
+.3 dot\_images.
+.2 datasets.
+.2 gui.
+.2 src.
+.3 drivers.
+.3 exceptions.
+.3 modules.
+.4 Arithmetic\_Toolkit.
+.4 Feature\_Extractor.
+.4 Position\_Estimation.
+.4 Prediction\_Models.
+.2 tests.
+}
+
+
+\subsubsection{Determining a 3D Model of an Object From a Video}
+Given the nature of the project and its grounding in a research study, Constellation employs some open-source libraries or toolkits for simple image operations and some lower level subprocessees. One of such low level subprocessees is the generation of the three dimensional model of a singular obejct, not the entire scene. Constellation takes a two-fold approach to this problem, as described in the approach (3.1) section. Firstly, an image of a video is to be broken down into images. Constellation achieves this by employing OpenCV, an open source computer vision library originally created by Intel, which opens a capture of a video and allows operations frame by frame. Constellation creates images of and saves two frames per each second of video into the \texttt{data} directory. From there, it employs another open source framework, 
+\subsubsection{Environment Model Generation}
+In order to perform the relatively low-level task of creating a viewable and easily-understandable three dimensional picture of the scene, Constellation generates a \texttt{.stl} file by using the \texttt{Axes3D} module from the matplotlib 3D library, which can convert matplotlib point meshes to \texttt{.stl} files.

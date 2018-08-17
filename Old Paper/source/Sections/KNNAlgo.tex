@@ -1,0 +1,14 @@
+\def\BState{\State\hskip-\ALG@thistlm}
+\begin{algorithm}
+\caption{KNN Classification Algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{knn\_classify(k, labeled points, new point):}{}
+\State $\text{by distance}\gets\text{sorted labeled points by distance from new point}$
+\State $\text{create empty list of k nearest}$
+\State $\emph{loop} \text{ for first }$k$\text{ points in by distance:}$ %
+\State $\enspace\enspace\text{k nearest}\gets\text{k nearest}+\text{point}$
+\State $\text{classification}\gets\text{majority\_vote(k nearest)}$
+\State $\Return \text{ classification}$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}

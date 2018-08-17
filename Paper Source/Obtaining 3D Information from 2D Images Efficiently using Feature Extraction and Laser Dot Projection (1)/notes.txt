@@ -1,4 +1,0 @@
-multiple labels/classifications via SVMs:
-* Weston, Jason, and Chris Watkins. Multi-class support vector machines. Technical Report CSD-TR-98-04, Department of Computer Science, Royal Holloway, University of London, May, 1998.
-* Crammer, Koby, and Yoram Singer. "On the algorithmic implementation of multiclass kernel-based vector machines." The Journal of Machine Learning Research 2 (2002): 265-292.
-* Tsochantaridis, Ioannis, et al. "Large margin methods for structured and interdependent output variables." Journal of Machine Learning Research 6.2 (2006): 1453.
